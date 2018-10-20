@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/Scenes/StartScene.unity
-  isLoaded: 0
-  isActive: 0
+  isLoaded: 1
+  isActive: 1
 - path: Assets/Scenes/IntroductionScene.unity
   isLoaded: 0
   isActive: 0
@@ -17,6 +17,6 @@ sceneSetups:
 - path: Assets/Scenes/RaycastScene.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/CreditScene.unity
-  isLoaded: 1
-  isActive: 1
+- path: Assets/Scenes/CreditScene.unity
+  isLoaded: 0
+  isActive: 0
