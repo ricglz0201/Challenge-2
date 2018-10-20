@@ -1,4 +1,22 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/Scenes/StartScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/IntroductionScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/GameOverScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/WinScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/ProjectileScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/RaycastScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/CreditScene.unity
   isLoaded: 1
   isActive: 1
