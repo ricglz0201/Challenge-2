@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
+	public Rigidbody bullet;
 	public int speed = 100;
-  public Rigidbody bullet;
+	public float fireRate = 10;  // The number of bullets fired per second
+	float lastfired;      // The value of Time.time at the last firing moment
 
-  void Update() {
-    if(Input.GetButtonDown("Fire1")) {
-      Rigidbody clone = Instantiate(bullet,
-                                    transform.position,
-                                    transform.rotation)
-                                    as Rigidbody;
-      clone.velocity = transform.TransformDirection(new Vector3(0, 0,speed));
-      Destroy(clone.gameObject, 1);
-    }
-  }
+	void Update () {
+		if (Input.GetButton("Fire1")) {
+	    	if (Time.time - lastfired > 1 / fireRate) {
+	        	lastfired = Time.time;
+	        	Rigidbody clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+	        	clone.velocity = transform.TransformDirection(new Vector3(0,0,speed));
+	        	Destroy(clone.gameObject, 1);
+	    	}
+		}
+	}
 	
 }
