@@ -1,28 +1,46 @@
 using UnityEngine;
+using System.Collections;
 
 public class RaycastShoot : MonoBehaviour {
+
+	public int gunDamage = 1;
+  public float fireRate = 0.25f;
+  public float weaponRange = 500f;
+  public float hitForce = 100f;
+  public Camera fpsCam;
+  public Transform ejection;
+  private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
+  private AudioSource gunAudio;
+  private LineRenderer laserLine;
+  private float nextFire;
+
+  void Start() {
+    laserLine = GetComponent<LineRenderer>();
+  }
+
   void Update() {
-    if(Input.GetButtonDown("Fire1")) {
-      RaycastIsShoot();
+    if (Input.GetButtonDown("Fire1") && Time.time > nextFire) {
+      nextFire = Time.time + fireRate;
+      StartCoroutine (ShotEffect());
+      Vector3 rayOrigin = fpsCam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+      RaycastHit hit;
+      laserLine.SetPosition (0, ejection.position);
+      if (Physics.Raycast (rayOrigin, fpsCam.transform.forward, out hit, weaponRange)){
+        laserLine.SetPosition (1, hit.point);
+        Collider collider = hit.collider;
+        if(collider.tag == "Ball") {
+          Destroy(collider.gameObject);
+			    GeneralVars.score++;
+        }
+      } else {
+        laserLine.SetPosition (1, rayOrigin + (fpsCam.transform.forward * weaponRange));
+      }
     }
   }
 
-  private void RaycastIsShoot() {
-    int layerMask = 1 << 8;
-    layerMask = ~layerMask;
-    RaycastHit hit;
-    bool itHit = Physics.Raycast(transform.position,
-                                    transform.TransformDirection(Vector3.forward), 
-                                    out hit, 
-                                    Mathf.Infinity, 
-                                    layerMask);
-    if (itHit) {
-      Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-      Debug.Log("Did Hit");
-    }
-    else {
-      Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-      Debug.Log("Did not Hit");
-    }
+  private IEnumerator ShotEffect(){
+      laserLine.enabled = true;
+      yield return shotDuration;
+      laserLine.enabled = false;
   }
 }
