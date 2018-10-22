@@ -9,8 +9,9 @@ public class RaycastShoot : MonoBehaviour {
   public float hitForce = 100f;
   public Camera fpsCam;
   public Transform ejection;
+  public AudioSource gunAudio;
+  public AudioSource colliderAudio;
   private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
-  private AudioSource gunAudio;
   private LineRenderer laserLine;
   private float nextFire;
 
@@ -29,6 +30,7 @@ public class RaycastShoot : MonoBehaviour {
         laserLine.SetPosition (1, hit.point);
         Collider collider = hit.collider;
         if(collider.tag == "Ball") {
+          colliderAudio.Play();
           Destroy(collider.gameObject);
 			    GeneralVars.score++;
         }
@@ -39,8 +41,9 @@ public class RaycastShoot : MonoBehaviour {
   }
 
   private IEnumerator ShotEffect(){
-      laserLine.enabled = true;
-      yield return shotDuration;
-      laserLine.enabled = false;
+    gunAudio.Play();
+    laserLine.enabled = true;
+    yield return shotDuration;
+    laserLine.enabled = false;
   }
 }
