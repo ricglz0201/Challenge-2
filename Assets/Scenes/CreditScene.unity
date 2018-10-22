@@ -244,7 +244,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Technologies, U. (2018). Unity User Manual (2018.2).
 
-    Retrieved October 19, 2018, from https://docs.unity3d.com/Manual/index.html'
+    Retrieved October 19, 2018, from https://docs.unity3d.com/Manual/index.html
+
+
+    Unity. (2018). Let''s Try: Shooting with Raycasts (article). Retrieved October
+    22, 2018, from https://unity3d.com/es/learn/tutorials/projects/lets-try-assignments/lets-try-shooting-raycasts-article'
 --- !u!222 &828669382
 CanvasRenderer:
   m_ObjectHideFlags: 0
