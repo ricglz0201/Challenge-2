@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	public Rigidbody bullet;
-	public int speed = 100;
+	public int speed = 500;
 	public float fireRate = 10;  // The number of bullets fired per second
 	float lastfired;      // The value of Time.time at the last firing moment
 

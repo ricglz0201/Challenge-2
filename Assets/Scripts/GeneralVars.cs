@@ -13,7 +13,7 @@ public class GeneralVars : MonoBehaviour {
 
 	void Start() {
 		score = 0;
-		time = 30.0f;
+		time = 45.0f;
 	}
 	
 	// Update is called once per frame
