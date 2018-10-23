@@ -208,7 +208,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 860, y: 50}
+  m_SizeDelta: {x: 860, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828669381
 MonoBehaviour:
@@ -248,7 +248,16 @@ MonoBehaviour:
 
 
     Unity. (2018). Let''s Try: Shooting with Raycasts (article). Retrieved October
-    22, 2018, from https://unity3d.com/es/learn/tutorials/projects/lets-try-assignments/lets-try-shooting-raycasts-article'
+    22, 2018, from https://unity3d.com/es/learn/tutorials/projects/lets-try-assignments/lets-try-shooting-raycasts-article
+
+
+    PBR low poly Magine Gun MG61 by Butterflyware
+
+    Record player by Vis Games
+
+    Trash can by Ozgur
+
+    Medievel Town Exteriors by Lylek Games'
 --- !u!222 &828669382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -368,7 +377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -31}
+  m_AnchoredPosition: {x: -1, y: -109}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954190035
@@ -566,7 +575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 79.4}
+  m_AnchoredPosition: {x: 1, y: 156}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514567549
